@@ -39,7 +39,7 @@ The project focuses on detecting repeated failed login attempts, correlating suc
 - Accessed the Splunk Web interface.
 - Completed the initial administrator setup.
 
-📷 **Screenshot:** Splunk Enterprise installation / first login
+![Splunk Enterprise Installation](01-splunk-install.png)
 
 ---
 
@@ -50,7 +50,7 @@ The project focuses on detecting repeated failed login attempts, correlating suc
 - Configured port **9997**.
 - Created the administrator account.
 
-📷 **Screenshot:** Universal Forwarder installation
+![Splunk Universal Forwarder Installation](02-forwarder-install.png)
 
 ---
 
@@ -72,7 +72,7 @@ splunk btool inputs list --debug
 
 Restarted the forwarder after configuration.
 
-📷 **Screenshot:** inputs.conf verification
+![Inputs Configuration Verification](03-inputs-config.png)
 
 ---
 
@@ -92,9 +92,10 @@ index=main EventCode=4624
 
 These searches confirmed that authentication events were being collected successfully.
 
-📷 **Screenshot:** EventCode 4625 search
+![Event ID 4625 Search Results](04-eventcode-4625.png)
 
-📷 **Screenshot:** EventCode 4624 search
+![Event ID 4624 Search Results](05-eventcode-4624.png)
+
 ---
 
 # Detection Logic (SPL Queries)
@@ -112,7 +113,7 @@ Purpose:
 - Retrieves failed Windows authentication attempts.
 - Used to identify repeated failed logins that may indicate a brute force attack.
 
-📷 Screenshot: EventCode 4625 search results
+![Event ID 4625 Search Results](04-eventcode-4625.png)
 
 ---
 
@@ -127,7 +128,7 @@ Purpose:
 - Retrieves successful Windows logins.
 - Used to correlate successful logins following multiple failed attempts.
 
-📷 Screenshot: EventCode 4624 search results
+![Event ID 4624 Search Results](05-eventcode-4624.png)
 
 ---
 
@@ -154,7 +155,7 @@ To automate brute force detection, a Splunk alert was created based on failed au
 
 The alert automatically notifies when suspicious authentication activity is detected within the configured threshold.
 
-📷 Screenshot: Splunk Alert Configuration
+![Splunk Alert Configuration](06-alert-config.png)
 
 ---
 
@@ -170,7 +171,7 @@ The dashboard includes:
 
 The dashboard enables security analysts to quickly identify suspicious authentication activity and investigate potential brute force attacks.
 
-📷 Screenshot: Brute Force Login Monitoring Dashboard
+![Brute Force Login Monitoring Dashboard](07-dashboard.png)
 
 ---
 
